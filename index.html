@@ -2,7 +2,6 @@
 <html> 
     <head>
         <title>ARaa.js Hello World Example</title>
-        <textarea> hello</textarea>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script type='text/javascript' src='../../../build/aframe-ar-nft.js'></script>
     </head>
@@ -12,7 +11,7 @@
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
         renderer='antialias: true; alpha: true'>
             <a-camera gps-camera rotation-reader></a-camera>
-            <a-box gps-entity-place='latitude: your-latitude; longitude: your-longitude' color='red' scale='20 20 20'></a-box>
+            <a-box gps-entity-place='latitude: 1; longitude: 1' color='red' scale='20 20 20'></a-box>
     </a-scene>
     </body>
 </html>
