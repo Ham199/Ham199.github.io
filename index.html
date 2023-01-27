@@ -10,10 +10,14 @@
 
 
   <div class="container" >
-  <model-viewer id="hotspot-demo" ar environment-image="brown_photostudio_01_1k.hdr" 
-  ar-modes="webxr" camera-controls touch-action="pan-y" 
-  src="DFV-GEBAUEDE-ROUGH.gltf" poster="" 
-  shadow-intensity="1" alt="A 3D model of a___.">
+  <model-viewer id="hotspot-demo" 
+  ar environment-image="brown_photostudio_01_1k.hdr" 
+  ar-modes="webxr" 
+  camera-controls touch-action="pan-y" 
+  src="DFV-GEBAUEDE-ROUGH.gltf" 
+  poster="" 
+  shadow-intensity="1" 
+  alt="A 3D model of a___.">
    
 
 <div class="slider">
@@ -33,10 +37,14 @@ window.SwitchSource => ("element, name") => {
     const base = name;
     modelViewer.src= base + '.gltf';
     modelViewer.poster= base + '.webp';
+    slides.forEach((element) => {element.classList.remove("selected");});
+    element.classList.add("selected");
 
-
-}
-
+};
+  document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
+    // Keep slider interactions from affecting the XR scene.
+    ev.preventDefault();
+  });
 
 
 </script>
