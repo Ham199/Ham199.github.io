@@ -1,7 +1,41 @@
+
+  <!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" href="style.css">
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
 
-<model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" 
-src="scene.gltf" ar environment-image="thatch_chapel_1k.hdr" poster="shared-assets/models/NeilArmstrong.webp" 
-shadow-intensity="1" camera-controls touch-action="pan-y">
 
-</model-viewer>
+  <div class="container" >
+  <model-viewer id="hotspot-demo" ar environment-image="brown_photostudio_01_1k.hdr" 
+  ar-modes="webxr" camera-controls touch-action="pan-y" 
+  src="chubby_shiba_baby.glb" poster="" 
+  shadow-intensity="1" alt="A 3D model of a___.">
+   
+
+<div class="slider">
+    <div class="sliders">
+        <button class="slidebutton selected" onclick="switchSrc(this, 'shiba')" style="background-image: url('https://images.t3n.de/news/wp-content/uploads/2021/10/shiba-inu-shutterstock-1716715003.jpg?class=hero');">
+
+        </button>
+        <button class="slidebutton"></button>
+        <button class="slidebutton"></button>
+    </div>
+</div>
+
+<script type="modules">
+
+
+    
+</script>
+
+
+
+
+  </model-viewer>
+</div>
+</body>
+</html>
