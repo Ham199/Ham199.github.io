@@ -18,7 +18,7 @@
 
 <div class="slider">
     <div class="sliders">
-        <button class="slidebutton selected" onclick="switchSrc(this, 'shiba')" style="background-image: url('https://images.t3n.de/news/wp-content/uploads/2021/10/shiba-inu-shutterstock-1716715003.jpg?class=hero');">
+        <button class="slidebutton selected" onclick="switchSrc(this, 'shiba')" style="background-image: url('');">
 
         </button>
         <button class="slidebutton"></button>
@@ -31,6 +31,8 @@ const modelViewer = document.querySelector("model-viewer");
 
 window.SwitchSource => ("element, name") => {
     const base = name;
+    modelViewer.src= base + '.gltf';
+    modelViewer.poster= base + '.webp';
 
 
 }
