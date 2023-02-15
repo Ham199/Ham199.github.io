@@ -7,7 +7,7 @@
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="style.css">
 
         <!-- 3d model viewer links -->
 <!-- Loads <model-viewer> for modern browsers: -->
@@ -46,16 +46,16 @@
 
 <div id="displayblocks">
 
-        <model-viewer ondblclick="addHotspot()" onclick="selected()" id="modelblock" src="chubby_shiba_baby.glb" class=""
+        <model-viewer ondblclick="addHotspot()" onclick="selected()" id="modelblock" src="DFV-GEBAUEDE-ROUGH.gltf" class=""
         ar
         auto-rotate 
         camera-controls
         background-color="#254441"
         shadow-intensity="1"
       alt="A 3D model of a test cube">
-      <button slot="hotspot-0" class="hotspot" data-position="-0.7397343349036523m 0.7593637108802795m 0.3262876049225051m" data-normal="0m 1m 0m"><div class="annotation">
+      <button slot="hotspot-0" class="hotspot" data-position="400m 300.m 10m" data-normal="0m 1m 0m"><div class="annotation">
         test2</div></button>
-      <button slot="hotspot-1" class="hotspot" data-position="0.13529183354718943m 1.2509730929556313m 0.05367829508087851m" data-normal="0.027936893635175666m -0.11609595558159552m 0.9928450327576873m"><div class="annotation">
+      <button slot="hotspot-1" class="hotspot" data-position="7m 70m 7m" data-normal="0.027936893635175666m -0.11609595558159552m 0.9928450327576873m"><div class="annotation">
         test</div></button>
       
 
@@ -64,17 +64,6 @@
         
 </model-viewer>
 
-<script>
-    function removeHotspot(){
-    var el = document.getElementById(`hotspot-${hotspotCounter}`);
-    
-    if (el == null){
-        alert("No hotspots to delete");
-    }else{
-        hotspotCounter --;
-el.remove()}; // Removes the last added hotspot
-}
-</script>
 
     </body>
 </html>
