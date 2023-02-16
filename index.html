@@ -46,24 +46,31 @@
 
 <div id="displayblocks">
 
-        <model-viewer ondblclick="addHotspot()" onclick="selected()" id="modelblock" src="DFV-GEBAUEDE-ROUGH.gltf" class=""
+        <model-viewer id="modelblock" src="DFV-GEBAUEDE-ROUGH.gltf" class=""
         ar
         auto-rotate 
         camera-controls
         background-color="#254441"
         shadow-intensity="1"
       alt="A 3D model of a test cube">
-      <button slot="hotspot-0" class="hotspot" data-position="400m 300.m 10m" data-normal="0m 1m 0m"><div class="annotation">
+      <button slot="hotspot-0" id="hotspot-0" class="hotspot" data-position="400m 300.m 10m" data-normal="0m 1m 0m"><div class="annotation" onclick="myFunction()">
+        test1</div></button>
+      <button slot="hotspot-1" id="hotspot-1" class="hotspot" data-position="7m 70m 7m" data-normal="0.027936893635175666m -0.11609595558159552m 0.9928450327576873m"><div class="annotation">
         test2</div></button>
-      <button slot="hotspot-1" class="hotspot" data-position="7m 70m 7m" data-normal="0.027936893635175666m -0.11609595558159552m 0.9928450327576873m"><div class="annotation">
-        test</div></button>
-      
-
-        
-
         
 </model-viewer>
 
+<script>
+    function myFunction() {
+        const element = document.getElementById("hotspot-0").innerHTML; //get id -> im innerHTML -> test1
+        document.getElementById("hotspot-1").innerHTML = element; //get id -> content im tag mit innerHTML
+        const template = document.createElement('div');
+        template.innerHTML= "hinzugefügt";
+        document.body.appendChild(template);
+
+  
+}
+</script>
 
     </body>
 </html>
