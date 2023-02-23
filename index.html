@@ -22,7 +22,6 @@
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.0/model-viewer.min.js"></script>
 
 <!-- The following libraries and polyfills are recommended to maximize browser support -->
-<!-- NOTE: you must adjust the paths as appropriate for your project -->
     
 <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
 <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
@@ -50,61 +49,57 @@
         <model-viewer class="modelblock"
         
         id="hotspot-camera-view-demo" 
-        
+        environment-image="HDR/scythian_tombs_1k.hdr"
         src="GebäudeModel kleiner.gltf"
         ar
         camera-controls
         background-color="#254441"
-        shadow-intensity="1"
+        shadow-intensity="3"
+        shadow-softness="0.5"
         alt="A 3D model of a test cube" 
+        style="background-color: unset;"
         touch-action="none" 
         camera-orbit="-8.142746deg 68.967deg 0.6179899m" 
-        camera-target="-0.003m 0.0722m 0.0391m" 
+        camera-target="55m 55m 55m" 
         field-of-view="45deg" 
         min-field-of-view="25deg" 
         max-field-of-view="45deg" 
-        interpolation-decay="200" 
-        min-camera-orbit="auto auto 100%">
+        interpolation-decay="50" 
+        min-camera-orbit="auto auto 100%"
+        interaction-prompt="none"
+       
+        >
+        <div id="progress-bar-d" slot="progress-bar"></div> <!-- hide progress bar-->
 
-     
-     
 
-        
-        <button class="view-button" slot="hotspot-11" data-position="70.1053838m 30.01610652m 130.1076345m" data-normal="120.1053838m 0.01610652m 130.1076345m" data-orbit="10.89188deg 80.9775deg 100.03543022m" data-target="-10.1053838m 10.01610652m -100.1076345m">
-          Hinten
+        <button class="view-button" slot="hotspot-1" data-position="70.1053838m 30.01610652m 130.1076345m" data-normal="120.1053838m 0.01610652m 130.1076345m" data-orbit="10.89188deg 80.9775deg 0.03543022m" data-target="70.1053838m 30.01610652m 130.1076345m">
+          hinten
         </button>
-        <button class="view-button" slot="hotspot-4" data-position="20m 80.18906m -50.0158m" data-normal="-10m 10.18906m -30.0158m" data-orbit="180.8446deg 89deg 105.06m" data-target="20m 30m 50m">
-          Vorne
+
+        <button class="view-button" slot="hotspot-2" data-position="20m 80.18906m -50.0158m" data-normal="-10m 10.18906m -30.0158m" data-orbit="180.8446deg 89deg -105.06m" data-target="20m 80.18906m -50.0158m">
+          vorne
         </button>      
 
-        <button class="view-button" slot="hotspot-5" data-position="120m 60.18906m -90.0158m" data-normal="-10m 10.18906m -30.0158m" data-orbit="80.8446deg 89deg 105.06m" data-target="20m 30m 50m">
+        <button class="view-button" slot="hotspot-3" data-position="80m 80.18906m 10.0158m" data-normal="80m 80.18906m 10.0158m" data-orbit="80.8446deg 80deg 105.06m" data-target="70m 100.18906m 10.0158m">
           rechts
         </button>   
 
-        <button class="view-button" slot="hotspot-6" data-position="-40m 80.18906m 10.0158m" data-normal="-10m 10.18906m -30.0158m" data-orbit="250.8446deg 89deg 105.06m" data-target="20m 30m 50m">
+        <button class="view-button" slot="hotspot-4" data-position="-20m 80.18906m 10.0158m" data-normal="-40m 80.18906m 10m" data-orbit="250.8446deg 89deg 05.06m" data-target="-20m 80.18906m 10.0158m">
           links
         </button>   
-
+       <button class="view-button_return" slot="hotspot-5" data-position="50m 50m 0m" data-normal="-40m 80.18906m 10m" data-orbit="50.8446deg 88deg 05.06m" data-target="300m 150.18906m 300.0158m">
+          return
+        </button> 
+         
 </model-viewer>
-
-<script>
-    function myFunction() {
-    
-        const template = document.createElement('div');
-        template.innerHTML= "hinzugefügt";
-        document.body.appendChild(template);
-        template.className = "mystyle";
   
-}
-</script>
-
 <script type="module">
     const modelViewer2 = document.querySelector("#hotspot-camera-view-demo");
     const annotationClicked = (annotation) => {
       let dataset = annotation.dataset;
       modelViewer2.cameraTarget = dataset.target;
       modelViewer2.cameraOrbit = dataset.orbit;
-      modelViewer2.fieldOfView = '45deg';
+      modelViewer2.fieldOfView = '0deg';
     }
   
     modelViewer2.querySelectorAll('button').forEach((hotspot) => {
