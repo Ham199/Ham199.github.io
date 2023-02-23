@@ -43,7 +43,7 @@
     </head>
     <body>
         
-
+      <span style="position: absolute; text-align: center; font-size: 100px; line-height: 100px; left: 50%; transform: translateX(-50%);">Background<br>is <br>transparent.<br></span>
 <div id="displayblocks">
 
         <model-viewer class="modelblock"
@@ -64,9 +64,10 @@
         field-of-view="45deg" 
         min-field-of-view="25deg" 
         max-field-of-view="45deg" 
-        interpolation-decay="50" 
+        interpolation-decay="150" 
         min-camera-orbit="auto auto 100%"
         interaction-prompt="none"
+        disable-zoom 
        
         >
         <div id="progress-bar-d" slot="progress-bar"></div> <!-- hide progress bar-->
@@ -87,9 +88,7 @@
         <button class="view-button" slot="hotspot-4" data-position="-20m 80.18906m 10.0158m" data-normal="-40m 80.18906m 10m" data-orbit="250.8446deg 89deg 05.06m" data-target="-20m 80.18906m 10.0158m">
           links
         </button>   
-       <button class="view-button_return" slot="hotspot-5" data-position="50m 50m 0m" data-normal="-40m 80.18906m 10m" data-orbit="50.8446deg 88deg 05.06m" data-target="300m 150.18906m 300.0158m">
-          return
-        </button> 
+    <span class="hint">click on empty space to zoom out</span>
          
 </model-viewer>
   
