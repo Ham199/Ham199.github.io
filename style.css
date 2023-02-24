@@ -22,7 +22,7 @@
   }
   
   .modelblock{
-  width: 50vw;
+  width: 100%;
   height: 50vw;
   margin: 10vh 0px 0px 0px;
   
@@ -102,9 +102,9 @@
    }
 
 
-   @media only screen and (min-width: 1000px) {
+   @media only screen and (min-width: 1600px) {
     .modelblock{
-      width: 50vw;
+      width: 100%;
       height: 50vh;
       margin: 10vh 0px 0px 0px;
       
